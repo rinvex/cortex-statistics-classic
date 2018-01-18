@@ -1,0 +1,57 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+
+    'created_at' => 'Created At',
+    'updated_at' => 'Updated At',
+    'details' => 'Details',
+    'logs' => 'Logs',
+    'yes' => 'Yes',
+    'no' => 'No',
+    'submit' => 'Submit',
+
+    'user' => 'User',
+    'session_id' => 'Session Id',
+    'status_code' => 'Status Code',
+    'method' => 'Method',
+    'protocol_version' => 'Protocol Version',
+    'language' => 'Language',
+    'referer' => 'Referer',
+    'family' => 'Family',
+    'version' => 'Version',
+    'count' => 'Count',
+    'name' => 'Name',
+    'model' => 'Model',
+    'brand' => 'Brand',
+    'client_ip' => 'Client IP',
+    'latitude' => 'Latitude',
+    'longitude' => 'Longitude',
+    'country_code' => 'Country',
+    'client_ips' => 'Client IPs',
+    'division_code' => 'Division',
+    'postal_code' => 'Postal Code',
+    'is_from_trusted_proxy' => 'Trusted Proxy',
+    'timezone' => 'Timezone',
+    'city' => 'City',
+    'kind' => 'Kind',
+    'path' => 'Path',
+    'action' => 'Action',
+    'middleware' => 'Middleware',
+    'parameters' => 'Parameters',
+    'host' => 'Host',
+    'locale' => 'Locale',
+    'accessarea' => 'Accessarea',
+
+    'statistics' => 'Statistics',
+    'platforms' => 'Platforms',
+    'requests' => 'Requests',
+    'devices' => 'Devices',
+    'charts' => 'Charts',
+    'geoips' => 'Geoips',
+    'agents' => 'Agents',
+    'routes' => 'Routes',
+    'paths' => 'Paths',
+
+];
