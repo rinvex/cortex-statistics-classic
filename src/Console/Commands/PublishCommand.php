@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Console\Commands;
 
-
 use Rinvex\Statistics\Console\Commands\PublishCommand as BasePublishCommand;
 
 class PublishCommand extends BasePublishCommand
