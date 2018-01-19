@@ -36,7 +36,7 @@ class StatisticsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         // Register console commands
         ! $this->app->runningInConsole() || $this->registerCommands();
@@ -47,7 +47,7 @@ class StatisticsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Router $router)
+    public function boot(Router $router): void
     {
         // Load resources
         require __DIR__.'/../../routes/breadcrumbs.php';
@@ -67,7 +67,7 @@ class StatisticsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function publishResources()
+    protected function publishResources(): void
     {
         $this->publishes([realpath(__DIR__.'/../../database/migrations') => database_path('migrations')], 'cortex-statistics-migrations');
         $this->publishes([realpath(__DIR__.'/../../resources/lang') => resource_path('lang/vendor/cortex/statistics')], 'cortex-statistics-lang');
@@ -78,7 +78,7 @@ class StatisticsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerCommands()
+    protected function registerCommands(): void
     {
         // Register artisan commands
         foreach ($this->commands as $key => $value) {

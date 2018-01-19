@@ -13,7 +13,7 @@ class AlterStatisticsPathsTableAddAccessAreaColumn extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::table(config('rinvex.statistics.tables.paths'), function (Blueprint $table) {
             $table->string('accessarea')->after('locale');
@@ -25,7 +25,7 @@ class AlterStatisticsPathsTableAddAccessAreaColumn extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::table(config('rinvex.statistics.tables.paths'), function (Blueprint $table) {
             $table->dropColumn('accessarea');
