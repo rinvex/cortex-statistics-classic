@@ -25,7 +25,7 @@ class RequestsDataTable extends AbstractDataTable
      *
      * @return array
      */
-    protected function getBuilderParameters()
+    protected function getBuilderParameters(): array
     {
         return [
             'keys' => true,
@@ -45,7 +45,7 @@ class RequestsDataTable extends AbstractDataTable
      *
      * @return array
      */
-    protected function getColumns()
+    protected function getColumns(): array
     {
         return [
             'user' => ['title' => trans('cortex/statistics::common.user'), 'responsivePriority' => 0],

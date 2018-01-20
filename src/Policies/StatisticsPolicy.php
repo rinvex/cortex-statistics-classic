@@ -19,7 +19,7 @@ class StatisticsPolicy
      *
      * @return bool
      */
-    public function list($ability, UserContract $user)
+    public function list($ability, UserContract $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -32,7 +32,7 @@ class StatisticsPolicy
      *
      * @return bool
      */
-    public function agents($ability, UserContract $user)
+    public function agents($ability, UserContract $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -45,7 +45,7 @@ class StatisticsPolicy
      *
      * @return bool
      */
-    public function devices($ability, UserContract $user)
+    public function devices($ability, UserContract $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -58,7 +58,7 @@ class StatisticsPolicy
      *
      * @return bool
      */
-    public function geoips($ability, UserContract $user)
+    public function geoips($ability, UserContract $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -71,7 +71,7 @@ class StatisticsPolicy
      *
      * @return bool
      */
-    public function paths($ability, UserContract $user)
+    public function paths($ability, UserContract $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -84,7 +84,7 @@ class StatisticsPolicy
      *
      * @return bool
      */
-    public function platforms($ability, UserContract $user)
+    public function platforms($ability, UserContract $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -97,7 +97,7 @@ class StatisticsPolicy
      *
      * @return bool
      */
-    public function requests($ability, UserContract $user)
+    public function requests($ability, UserContract $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -110,7 +110,7 @@ class StatisticsPolicy
      *
      * @return bool
      */
-    public function routes($ability, UserContract $user)
+    public function routes($ability, UserContract $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }

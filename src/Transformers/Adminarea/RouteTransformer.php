@@ -12,7 +12,7 @@ class RouteTransformer extends TransformerAbstract
     /**
      * @return array
      */
-    public function transform(RouteContract $route)
+    public function transform(RouteContract $route): array
     {
         return [
             'id' => (int) $route->getKey(),

@@ -12,7 +12,7 @@ class DeviceTransformer extends TransformerAbstract
     /**
      * @return array
      */
-    public function transform(DeviceContract $device)
+    public function transform(DeviceContract $device): array
     {
         return [
             'id' => (int) $device->getKey(),

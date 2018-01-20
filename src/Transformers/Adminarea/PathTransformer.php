@@ -12,7 +12,7 @@ class PathTransformer extends TransformerAbstract
     /**
      * @return array
      */
-    public function transform(PathContract $path)
+    public function transform(PathContract $path): array
     {
         return [
             'id' => (int) $path->getKey(),

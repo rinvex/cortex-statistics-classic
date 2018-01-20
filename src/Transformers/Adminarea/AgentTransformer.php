@@ -12,7 +12,7 @@ class AgentTransformer extends TransformerAbstract
     /**
      * @return array
      */
-    public function transform(AgentContract $agent)
+    public function transform(AgentContract $agent): array
     {
         return [
             'id' => (int) $agent->getKey(),

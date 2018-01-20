@@ -12,7 +12,7 @@ class GeoipTransformer extends TransformerAbstract
     /**
      * @return array
      */
-    public function transform(GeoipContract $geoip)
+    public function transform(GeoipContract $geoip): array
     {
         return [
             'id' => (int) $geoip->getKey(),

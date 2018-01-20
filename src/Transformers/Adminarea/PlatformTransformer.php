@@ -12,7 +12,7 @@ class PlatformTransformer extends TransformerAbstract
     /**
      * @return array
      */
-    public function transform(PlatformContract $platform)
+    public function transform(PlatformContract $platform): array
     {
         return [
             'id' => (int) $platform->getKey(),

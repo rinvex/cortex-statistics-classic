@@ -12,7 +12,7 @@ class RequestTransformer extends TransformerAbstract
     /**
      * @return array
      */
-    public function transform(RequestContract $request)
+    public function transform(RequestContract $request): array
     {
         return [
             'id' => (int) $request->getKey(),

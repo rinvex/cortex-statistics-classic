@@ -25,7 +25,7 @@ class PathsDataTable extends AbstractDataTable
      *
      * @return array
      */
-    protected function getBuilderParameters()
+    protected function getBuilderParameters(): array
     {
         return [
             'keys' => true,
@@ -45,7 +45,7 @@ class PathsDataTable extends AbstractDataTable
      *
      * @return array
      */
-    protected function getColumns()
+    protected function getColumns(): array
     {
         return [
             'host' => ['title' => trans('cortex/statistics::common.host'), 'responsivePriority' => 0],
