@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Policies;
 
-use Rinvex\Fort\Contracts\UserContract;
+use Rinvex\Fort\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class StatisticsPolicy
@@ -15,11 +15,11 @@ class StatisticsPolicy
      * Determine whether the user can list statistics.
      *
      * @param string                              $ability
-     * @param \Rinvex\Fort\Contracts\UserContract $user
+     * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
      */
-    public function list($ability, UserContract $user): bool
+    public function list($ability, User $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -28,11 +28,11 @@ class StatisticsPolicy
      * Determine whether the user can list statistics agents.
      *
      * @param string                              $ability
-     * @param \Rinvex\Fort\Contracts\UserContract $user
+     * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
      */
-    public function agents($ability, UserContract $user): bool
+    public function agents($ability, User $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -41,11 +41,11 @@ class StatisticsPolicy
      * Determine whether the user can list statistics devices.
      *
      * @param string                              $ability
-     * @param \Rinvex\Fort\Contracts\UserContract $user
+     * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
      */
-    public function devices($ability, UserContract $user): bool
+    public function devices($ability, User $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -54,11 +54,11 @@ class StatisticsPolicy
      * Determine whether the user can list statistics geoips.
      *
      * @param string                              $ability
-     * @param \Rinvex\Fort\Contracts\UserContract $user
+     * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
      */
-    public function geoips($ability, UserContract $user): bool
+    public function geoips($ability, User $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -67,11 +67,11 @@ class StatisticsPolicy
      * Determine whether the user can list statistics paths.
      *
      * @param string                              $ability
-     * @param \Rinvex\Fort\Contracts\UserContract $user
+     * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
      */
-    public function paths($ability, UserContract $user): bool
+    public function paths($ability, User $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -80,11 +80,11 @@ class StatisticsPolicy
      * Determine whether the user can list statistics platforms.
      *
      * @param string                              $ability
-     * @param \Rinvex\Fort\Contracts\UserContract $user
+     * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
      */
-    public function platforms($ability, UserContract $user): bool
+    public function platforms($ability, User $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -93,11 +93,11 @@ class StatisticsPolicy
      * Determine whether the user can list statistics requests.
      *
      * @param string                              $ability
-     * @param \Rinvex\Fort\Contracts\UserContract $user
+     * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
      */
-    public function requests($ability, UserContract $user): bool
+    public function requests($ability, User $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }
@@ -106,11 +106,11 @@ class StatisticsPolicy
      * Determine whether the user can list statistics routes.
      *
      * @param string                              $ability
-     * @param \Rinvex\Fort\Contracts\UserContract $user
+     * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
      */
-    public function routes($ability, UserContract $user): bool
+    public function routes($ability, User $user): bool
     {
         return $user->allAbilities->pluck('slug')->contains($ability);
     }

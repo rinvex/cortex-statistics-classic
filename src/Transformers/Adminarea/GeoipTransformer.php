@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Cortex\Statistics\Transformers\Adminarea;
 
 use League\Fractal\TransformerAbstract;
-use Rinvex\Statistics\Contracts\GeoipContract;
+use Rinvex\Statistics\Models\Geoip;
 
 class GeoipTransformer extends TransformerAbstract
 {
     /**
      * @return array
      */
-    public function transform(GeoipContract $geoip): array
+    public function transform(Geoip $geoip): array
     {
         return [
             'id' => (int) $geoip->getKey(),

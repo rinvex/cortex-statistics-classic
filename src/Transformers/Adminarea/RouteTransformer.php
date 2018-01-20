@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Cortex\Statistics\Transformers\Adminarea;
 
 use League\Fractal\TransformerAbstract;
-use Rinvex\Statistics\Contracts\RouteContract;
+use Rinvex\Statistics\Models\Route;
 
 class RouteTransformer extends TransformerAbstract
 {
     /**
      * @return array
      */
-    public function transform(RouteContract $route): array
+    public function transform(Route $route): array
     {
         return [
             'id' => (int) $route->getKey(),

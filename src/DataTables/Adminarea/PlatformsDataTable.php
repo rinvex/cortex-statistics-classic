@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\DataTables\Adminarea;
 
-use Rinvex\Statistics\Contracts\PlatformContract;
+use Rinvex\Statistics\Models\Platform;
 use Cortex\Foundation\DataTables\AbstractDataTable;
 use Cortex\Statistics\Transformers\Adminarea\PlatformTransformer;
 
@@ -13,7 +13,7 @@ class PlatformsDataTable extends AbstractDataTable
     /**
      * {@inheritdoc}
      */
-    protected $model = PlatformContract::class;
+    protected $model = Platform::class;
 
     /**
      * {@inheritdoc}

@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Cortex\Statistics\Transformers\Adminarea;
 
 use League\Fractal\TransformerAbstract;
-use Rinvex\Statistics\Contracts\PlatformContract;
+use Rinvex\Statistics\Models\Platform;
 
 class PlatformTransformer extends TransformerAbstract
 {
     /**
      * @return array
      */
-    public function transform(PlatformContract $platform): array
+    public function transform(Platform $platform): array
     {
         return [
             'id' => (int) $platform->getKey(),

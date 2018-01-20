@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Cortex\Statistics\Transformers\Adminarea;
 
 use League\Fractal\TransformerAbstract;
-use Rinvex\Statistics\Contracts\AgentContract;
+use Rinvex\Statistics\Models\Agent;
 
 class AgentTransformer extends TransformerAbstract
 {
     /**
      * @return array
      */
-    public function transform(AgentContract $agent): array
+    public function transform(Agent $agent): array
     {
         return [
             'id' => (int) $agent->getKey(),

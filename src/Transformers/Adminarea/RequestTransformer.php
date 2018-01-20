@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Cortex\Statistics\Transformers\Adminarea;
 
 use League\Fractal\TransformerAbstract;
-use Rinvex\Statistics\Contracts\RequestContract;
+use Rinvex\Statistics\Models\Request;
 
 class RequestTransformer extends TransformerAbstract
 {
     /**
      * @return array
      */
-    public function transform(RequestContract $request): array
+    public function transform(Request $request): array
     {
         return [
             'id' => (int) $request->getKey(),

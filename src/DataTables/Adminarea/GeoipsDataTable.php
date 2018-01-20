@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\DataTables\Adminarea;
 
-use Rinvex\Statistics\Contracts\GeoipContract;
+use Rinvex\Statistics\Models\Geoip;
 use Cortex\Foundation\DataTables\AbstractDataTable;
 use Cortex\Statistics\Transformers\Adminarea\AgentTransformer;
 
@@ -13,7 +13,7 @@ class GeoipsDataTable extends AbstractDataTable
     /**
      * {@inheritdoc}
      */
-    protected $model = GeoipContract::class;
+    protected $model = Geoip::class;
 
     /**
      * {@inheritdoc}

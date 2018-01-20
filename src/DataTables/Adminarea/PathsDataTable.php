@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\DataTables\Adminarea;
 
-use Rinvex\Statistics\Contracts\PathContract;
+use Rinvex\Statistics\Models\Path;
 use Cortex\Foundation\DataTables\AbstractDataTable;
 use Cortex\Statistics\Transformers\Adminarea\PathTransformer;
 
@@ -13,7 +13,7 @@ class PathsDataTable extends AbstractDataTable
     /**
      * {@inheritdoc}
      */
-    protected $model = PathContract::class;
+    protected $model = Path::class;
 
     /**
      * {@inheritdoc}

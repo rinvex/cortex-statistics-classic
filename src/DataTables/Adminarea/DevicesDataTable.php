@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\DataTables\Adminarea;
 
-use Rinvex\Statistics\Contracts\DeviceContract;
+use Rinvex\Statistics\Models\Device;
 use Cortex\Foundation\DataTables\AbstractDataTable;
 use Cortex\Statistics\Transformers\Adminarea\DeviceTransformer;
 
@@ -13,7 +13,7 @@ class DevicesDataTable extends AbstractDataTable
     /**
      * {@inheritdoc}
      */
-    protected $model = DeviceContract::class;
+    protected $model = Device::class;
 
     /**
      * {@inheritdoc}

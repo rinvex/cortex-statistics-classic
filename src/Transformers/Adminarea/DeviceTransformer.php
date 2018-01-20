@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Cortex\Statistics\Transformers\Adminarea;
 
 use League\Fractal\TransformerAbstract;
-use Rinvex\Statistics\Contracts\DeviceContract;
+use Rinvex\Statistics\Models\Device;
 
 class DeviceTransformer extends TransformerAbstract
 {
     /**
      * @return array
      */
-    public function transform(DeviceContract $device): array
+    public function transform(Device $device): array
     {
         return [
             'id' => (int) $device->getKey(),

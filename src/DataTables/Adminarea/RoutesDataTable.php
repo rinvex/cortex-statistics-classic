@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\DataTables\Adminarea;
 
-use Rinvex\Statistics\Contracts\RouteContract;
+use Rinvex\Statistics\Models\Route;
 use Cortex\Foundation\DataTables\AbstractDataTable;
 use Cortex\Statistics\Transformers\Adminarea\RouteTransformer;
 
@@ -13,7 +13,7 @@ class RoutesDataTable extends AbstractDataTable
     /**
      * {@inheritdoc}
      */
-    protected $model = RouteContract::class;
+    protected $model = Route::class;
 
     /**
      * {@inheritdoc}
