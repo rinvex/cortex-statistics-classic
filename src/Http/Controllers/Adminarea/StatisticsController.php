@@ -23,7 +23,7 @@ class StatisticsController extends AuthorizedController
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\View\View
+     * @return \Illuminate\View\View
      */
     public function index()
     {
