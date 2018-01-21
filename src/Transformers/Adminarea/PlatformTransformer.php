@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Transformers\Adminarea;
 
-use League\Fractal\TransformerAbstract;
 use Rinvex\Statistics\Models\Platform;
+use League\Fractal\TransformerAbstract;
 
 class PlatformTransformer extends TransformerAbstract
 {

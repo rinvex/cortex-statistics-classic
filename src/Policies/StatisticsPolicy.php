@@ -14,7 +14,7 @@ class StatisticsPolicy
     /**
      * Determine whether the user can list statistics.
      *
-     * @param string                              $ability
+     * @param string                   $ability
      * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
@@ -27,7 +27,7 @@ class StatisticsPolicy
     /**
      * Determine whether the user can list statistics agents.
      *
-     * @param string                              $ability
+     * @param string                   $ability
      * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
@@ -40,7 +40,7 @@ class StatisticsPolicy
     /**
      * Determine whether the user can list statistics devices.
      *
-     * @param string                              $ability
+     * @param string                   $ability
      * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
@@ -53,7 +53,7 @@ class StatisticsPolicy
     /**
      * Determine whether the user can list statistics geoips.
      *
-     * @param string                              $ability
+     * @param string                   $ability
      * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
@@ -66,7 +66,7 @@ class StatisticsPolicy
     /**
      * Determine whether the user can list statistics paths.
      *
-     * @param string                              $ability
+     * @param string                   $ability
      * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
@@ -79,7 +79,7 @@ class StatisticsPolicy
     /**
      * Determine whether the user can list statistics platforms.
      *
-     * @param string                              $ability
+     * @param string                   $ability
      * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
@@ -92,7 +92,7 @@ class StatisticsPolicy
     /**
      * Determine whether the user can list statistics requests.
      *
-     * @param string                              $ability
+     * @param string                   $ability
      * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
@@ -105,7 +105,7 @@ class StatisticsPolicy
     /**
      * Determine whether the user can list statistics routes.
      *
-     * @param string                              $ability
+     * @param string                   $ability
      * @param \Rinvex\Fort\Models\User $user
      *
      * @return bool
