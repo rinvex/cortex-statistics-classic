@@ -6,7 +6,6 @@ namespace Cortex\Statistics\DataTables\Adminarea;
 
 use Rinvex\Statistics\Models\Device;
 use Cortex\Foundation\DataTables\AbstractDataTable;
-use Cortex\Statistics\Transformers\Adminarea\DeviceTransformer;
 
 class DevicesDataTable extends AbstractDataTable
 {
@@ -14,11 +13,6 @@ class DevicesDataTable extends AbstractDataTable
      * {@inheritdoc}
      */
     protected $model = Device::class;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $transformer = DeviceTransformer::class;
 
     /**
      * Get default builder parameters.

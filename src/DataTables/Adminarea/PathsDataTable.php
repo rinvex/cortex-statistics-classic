@@ -6,7 +6,6 @@ namespace Cortex\Statistics\DataTables\Adminarea;
 
 use Rinvex\Statistics\Models\Path;
 use Cortex\Foundation\DataTables\AbstractDataTable;
-use Cortex\Statistics\Transformers\Adminarea\PathTransformer;
 
 class PathsDataTable extends AbstractDataTable
 {
@@ -14,11 +13,6 @@ class PathsDataTable extends AbstractDataTable
      * {@inheritdoc}
      */
     protected $model = Path::class;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $transformer = PathTransformer::class;
 
     /**
      * Get default builder parameters.
@@ -52,7 +46,7 @@ class PathsDataTable extends AbstractDataTable
             'locale' => ['title' => trans('cortex/statistics::common.locale')],
             'accessarea' => ['title' => trans('cortex/statistics::common.accessarea')],
             'path' => ['title' => trans('cortex/statistics::common.path')],
-            'parameters' => ['title' => trans('cortex/statistics::common.parameters')],
+            'parameters' => ['title' => trans('cortex/statistics::common.parameters'), 'render' => 'data ? JSON.stringify(data) : ""'],
             'count' => ['title' => trans('cortex/statistics::common.count')],
         ];
     }

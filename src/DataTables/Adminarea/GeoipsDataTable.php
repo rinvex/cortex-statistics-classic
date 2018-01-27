@@ -6,7 +6,6 @@ namespace Cortex\Statistics\DataTables\Adminarea;
 
 use Rinvex\Statistics\Models\Geoip;
 use Cortex\Foundation\DataTables\AbstractDataTable;
-use Cortex\Statistics\Transformers\Adminarea\AgentTransformer;
 
 class GeoipsDataTable extends AbstractDataTable
 {
@@ -14,11 +13,6 @@ class GeoipsDataTable extends AbstractDataTable
      * {@inheritdoc}
      */
     protected $model = Geoip::class;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $transformer = AgentTransformer::class;
 
     /**
      * Get default builder parameters.
@@ -52,7 +46,7 @@ class GeoipsDataTable extends AbstractDataTable
             'latitude' => ['title' => trans('cortex/statistics::common.latitude')],
             'longitude' => ['title' => trans('cortex/statistics::common.longitude')],
             'country_code' => ['title' => trans('cortex/statistics::common.country_code')],
-            'client_ips' => ['title' => trans('cortex/statistics::common.client_ips')],
+            'client_ips' => ['title' => trans('cortex/statistics::common.client_ips'), 'visible' => false],
             'is_from_trusted_proxy' => ['title' => trans('cortex/statistics::common.is_from_trusted_proxy')],
             'division_code' => ['title' => trans('cortex/statistics::common.division_code')],
             'postal_code' => ['title' => trans('cortex/statistics::common.postal_code')],

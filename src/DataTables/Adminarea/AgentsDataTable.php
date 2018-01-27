@@ -6,7 +6,6 @@ namespace Cortex\Statistics\DataTables\Adminarea;
 
 use Rinvex\Statistics\Models\Agent;
 use Cortex\Foundation\DataTables\AbstractDataTable;
-use Cortex\Statistics\Transformers\Adminarea\AgentTransformer;
 
 class AgentsDataTable extends AbstractDataTable
 {
@@ -14,11 +13,6 @@ class AgentsDataTable extends AbstractDataTable
      * {@inheritdoc}
      */
     protected $model = Agent::class;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected $transformer = AgentTransformer::class;
 
     /**
      * Get default builder parameters.
