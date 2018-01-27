@@ -40,7 +40,7 @@ class Path extends BasePath
     protected $rules = [
         'host' => 'required|string',
         'locale' => 'required|string',
-        'accessarea' => 'required|string',
+        'accessarea' => 'nullable|string',
         'path' => 'required|string',
         'method' => 'required|string',
         'parameters' => 'nullable|array',
