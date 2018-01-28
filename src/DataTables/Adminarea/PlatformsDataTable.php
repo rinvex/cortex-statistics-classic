@@ -15,24 +15,9 @@ class PlatformsDataTable extends AbstractDataTable
     protected $model = Platform::class;
 
     /**
-     * Get default builder parameters.
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    protected function getBuilderParameters(): array
-    {
-        return [
-            'keys' => true,
-            'retrieve' => true,
-            'autoWidth' => false,
-            'dom' => "<'row'<'col-sm-6'B><'col-sm-6'f>> <'row'r><'row'<'col-sm-12't>> <'row'<'col-sm-5'i><'col-sm-7'p>>",
-            'buttons' => [
-                'print', 'reset', 'reload', 'export',
-                ['extend' => 'colvis', 'text' => '<i class="fa fa-columns"></i> '.trans('cortex/foundation::common.columns').' <span class="caret"/>'],
-                ['extend' => 'pageLength', 'text' => '<i class="fa fa-list-ol"></i> '.trans('cortex/foundation::common.limit').' <span class="caret"/>'],
-            ],
-        ];
-    }
+    protected $createButton = false;
 
     /**
      * Get columns.
