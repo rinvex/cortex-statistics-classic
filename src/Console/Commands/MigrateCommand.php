@@ -13,7 +13,7 @@ class MigrateCommand extends BaseMigrateCommand
      *
      * @var string
      */
-    protected $signature = 'cortex:migrate:statistics';
+    protected $signature = 'cortex:migrate:statistics {--force : Force the operation to run when in production.}';
 
     /**
      * The console command description.
@@ -31,6 +31,6 @@ class MigrateCommand extends BaseMigrateCommand
     {
         parent::handle();
 
-        $this->call('migrate', ['--step' => true, '--path' => 'app/cortex/statistics/database/migrations']);
+        $this->call('migrate', ['--step' => true, '--path' => 'app/cortex/statistics/database/migrations', '--force' => $this->option('force')]);
     }
 }
