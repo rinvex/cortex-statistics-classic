@@ -60,7 +60,7 @@ class StatisticsController extends AuthorizedController
     }
 
     /**
-     * Display a listing of the resource.
+     * List all agents.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\AgentsDataTable $agentsDataTable
      *
@@ -75,7 +75,7 @@ class StatisticsController extends AuthorizedController
     }
 
     /**
-     * Display a listing of the resource.
+     * List all geoips.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\GeoipsDataTable $geoipsDataTable
      *
@@ -90,7 +90,7 @@ class StatisticsController extends AuthorizedController
     }
 
     /**
-     * Display a listing of the resource.
+     * List all devices.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\DevicesDataTable $devicesDataTable
      *
@@ -105,7 +105,7 @@ class StatisticsController extends AuthorizedController
     }
 
     /**
-     * Display a listing of the resource.
+     * List all paths.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\PathsDataTable $pathsDataTable
      *
@@ -120,7 +120,7 @@ class StatisticsController extends AuthorizedController
     }
 
     /**
-     * Display a listing of the resource.
+     * List all platforms.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\PlatformsDataTable $platformsDataTable
      *
@@ -135,7 +135,7 @@ class StatisticsController extends AuthorizedController
     }
 
     /**
-     * Display a listing of the resource.
+     * List all requests.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\RequestsDataTable $requestsDataTable
      *
@@ -150,7 +150,7 @@ class StatisticsController extends AuthorizedController
     }
 
     /**
-     * Display a listing of the resource.
+     * List all routes.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\RoutesDataTable $routesDataTable
      *
