@@ -7,6 +7,7 @@ namespace Cortex\Statistics\Providers;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Cortex\Statistics\Console\Commands\SeedCommand;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Cortex\Statistics\Console\Commands\InstallCommand;
 use Cortex\Statistics\Console\Commands\MigrateCommand;
 use Cortex\Statistics\Console\Commands\PublishCommand;
@@ -49,6 +50,17 @@ class StatisticsServiceProvider extends ServiceProvider
      */
     public function boot(Router $router): void
     {
+        // Map relations
+        Relation::morphMap([
+            'path' => config('rinvex.statistics.models.path'),
+            'agent' => config('rinvex.statistics.models.agent'),
+            'geoip' => config('rinvex.statistics.models.geoip'),
+            'route' => config('rinvex.statistics.models.route'),
+            'device' => config('rinvex.statistics.models.device'),
+            'request' => config('rinvex.statistics.models.request'),
+            'platform' => config('rinvex.statistics.models.platform'),
+        ]);
+
         // Load resources
         require __DIR__.'/../../routes/breadcrumbs.php';
         $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
