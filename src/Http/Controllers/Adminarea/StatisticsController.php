@@ -56,7 +56,7 @@ class StatisticsController extends AuthorizedController
      */
     public function index()
     {
-        return view('cortex/foundation::adminarea.pages.home');
+        return view('cortex/foundation::adminarea.pages.index');
     }
 
     /**
