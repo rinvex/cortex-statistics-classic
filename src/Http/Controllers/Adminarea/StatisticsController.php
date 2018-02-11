@@ -41,7 +41,7 @@ class StatisticsController extends AuthorizedController
         $middleware = [];
 
         foreach ($this->mapResourceAbilities() as $method => $ability) {
-            $middleware["can:list-statistics"][] = $method;
+            $middleware['can:list-statistics'][] = $method;
         }
 
         foreach ($middleware as $middlewareName => $methods) {
