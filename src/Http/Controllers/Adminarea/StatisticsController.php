@@ -18,7 +18,7 @@ class StatisticsController extends AuthorizedController
     /**
      * {@inheritdoc}
      */
-    protected $resource = 'statistics';
+    protected $resource = 'list-statistics';
 
     /**
      * {@inheritdoc}
@@ -32,22 +32,6 @@ class StatisticsController extends AuthorizedController
         'requests',
         'routes',
     ];
-
-    /**
-     * {@inheritdoc}
-     */
-    public function authorizeResource($model, $parameter = null, array $options = [], $request = null): void
-    {
-        $middleware = [];
-
-        foreach ($this->mapResourceAbilities() as $method => $ability) {
-            $middleware['can:list-statistics'][] = $method;
-        }
-
-        foreach ($middleware as $middlewareName => $methods) {
-            $this->middleware($middlewareName, $options)->only($methods);
-        }
-    }
 
     /**
      * Show statistics index.
