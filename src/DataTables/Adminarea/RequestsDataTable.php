@@ -6,6 +6,7 @@ namespace Cortex\Statistics\DataTables\Adminarea;
 
 use Rinvex\Statistics\Models\Request;
 use Cortex\Foundation\DataTables\AbstractDataTable;
+use Cortex\Statistics\Transformers\Adminarea\RequestTransformer;
 
 class RequestsDataTable extends AbstractDataTable
 {
@@ -13,6 +14,11 @@ class RequestsDataTable extends AbstractDataTable
      * {@inheritdoc}
      */
     protected $model = Request::class;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $transformer = RequestTransformer::class;
 
     /**
      * {@inheritdoc}

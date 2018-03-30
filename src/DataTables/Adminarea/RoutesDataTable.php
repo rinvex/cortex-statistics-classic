@@ -6,6 +6,7 @@ namespace Cortex\Statistics\DataTables\Adminarea;
 
 use Rinvex\Statistics\Models\Route;
 use Cortex\Foundation\DataTables\AbstractDataTable;
+use Cortex\Statistics\Transformers\Adminarea\RouteTransformer;
 
 class RoutesDataTable extends AbstractDataTable
 {
@@ -13,6 +14,11 @@ class RoutesDataTable extends AbstractDataTable
      * {@inheritdoc}
      */
     protected $model = Route::class;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $transformer = RouteTransformer::class;
 
     /**
      * {@inheritdoc}

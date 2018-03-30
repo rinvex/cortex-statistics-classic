@@ -6,6 +6,7 @@ namespace Cortex\Statistics\DataTables\Adminarea;
 
 use Rinvex\Statistics\Models\Path;
 use Cortex\Foundation\DataTables\AbstractDataTable;
+use Cortex\Statistics\Transformers\Adminarea\PathTransformer;
 
 class PathsDataTable extends AbstractDataTable
 {
@@ -13,6 +14,11 @@ class PathsDataTable extends AbstractDataTable
      * {@inheritdoc}
      */
     protected $model = Path::class;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $transformer = PathTransformer::class;
 
     /**
      * {@inheritdoc}

@@ -6,6 +6,7 @@ namespace Cortex\Statistics\DataTables\Adminarea;
 
 use Rinvex\Statistics\Models\Geoip;
 use Cortex\Foundation\DataTables\AbstractDataTable;
+use Cortex\Statistics\Transformers\Adminarea\GeoipTransformer;
 
 class GeoipsDataTable extends AbstractDataTable
 {
@@ -13,6 +14,11 @@ class GeoipsDataTable extends AbstractDataTable
      * {@inheritdoc}
      */
     protected $model = Geoip::class;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $transformer = GeoipTransformer::class;
 
     /**
      * {@inheritdoc}
