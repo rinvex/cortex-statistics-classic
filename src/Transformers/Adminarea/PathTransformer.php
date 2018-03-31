@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Transformers\Adminarea;
 
-use Rinvex\Support\Traits\Escaper;
 use Rinvex\Statistics\Models\Path;
+use Rinvex\Support\Traits\Escaper;
 use League\Fractal\TransformerAbstract;
 
 class PathTransformer extends TransformerAbstract
