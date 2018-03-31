@@ -4,17 +4,20 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Transformers\Adminarea;
 
+use Rinvex\Support\Traits\Escaper;
 use Rinvex\Statistics\Models\Geoip;
 use League\Fractal\TransformerAbstract;
 
 class GeoipTransformer extends TransformerAbstract
 {
+    use Escaper;
+
     /**
      * @return array
      */
     public function transform(Geoip $geoip): array
     {
-        return [
+        return $this->escapeRow([
             'client_ip' => (string) $geoip->client_ip,
             'latitude' => (string) $geoip->latitude,
             'longitude' => (string) $geoip->longitude,
@@ -26,6 +29,6 @@ class GeoipTransformer extends TransformerAbstract
             'timezone' => (string) $geoip->timezone,
             'city' => (string) $geoip->city,
             'count' => (int) $geoip->count,
-        ];
+        ]);
     }
 }

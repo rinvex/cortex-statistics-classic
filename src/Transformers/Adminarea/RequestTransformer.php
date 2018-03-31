@@ -4,17 +4,20 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Transformers\Adminarea;
 
+use Rinvex\Support\Traits\Escaper;
 use Rinvex\Statistics\Models\Request;
 use League\Fractal\TransformerAbstract;
 
 class RequestTransformer extends TransformerAbstract
 {
+    use Escaper;
+
     /**
      * @return array
      */
     public function transform(Request $request): array
     {
-        return [
+        return $this->escapeRow([
             'user' => (string) $request->user,
             'session_id' => (string) $request->session_id,
             'status_code' => (string) $request->status_code,
@@ -29,6 +32,6 @@ class RequestTransformer extends TransformerAbstract
             'is_ajax' => (bool) $request->is_ajax,
             'is_pjax' => (bool) $request->is_pjax,
             'created_at' => (string) $request->created_at,
-        ];
+        ]);
     }
 }
