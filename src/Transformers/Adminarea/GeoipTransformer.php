@@ -17,7 +17,7 @@ class GeoipTransformer extends TransformerAbstract
      */
     public function transform(Geoip $geoip): array
     {
-        return $this->escapeRow([
+        return $this->escape([
             'client_ip' => (string) $geoip->client_ip,
             'latitude' => (string) $geoip->latitude,
             'longitude' => (string) $geoip->longitude,

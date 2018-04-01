@@ -17,7 +17,7 @@ class PlatformTransformer extends TransformerAbstract
      */
     public function transform(Platform $platform): array
     {
-        return $this->escapeRow([
+        return $this->escape([
             'family' => (string) $platform->family,
             'version' => (string) $platform->version,
             'count' => (int) $platform->count,

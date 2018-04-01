@@ -17,7 +17,7 @@ class AgentTransformer extends TransformerAbstract
      */
     public function transform(Agent $agent): array
     {
-        return $this->escapeRow([
+        return $this->escape([
             'name' => (string) $agent->name,
             'kind' => (string) $agent->kind,
             'family' => (string) $agent->family,

@@ -17,7 +17,7 @@ class DeviceTransformer extends TransformerAbstract
      */
     public function transform(Device $device): array
     {
-        return $this->escapeRow([
+        return $this->escape([
             'family' => (string) $device->family,
             'model' => (string) $device->model,
             'brand' => (string) $device->brand,

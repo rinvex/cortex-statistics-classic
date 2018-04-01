@@ -17,7 +17,7 @@ class RouteTransformer extends TransformerAbstract
      */
     public function transform(Route $route): array
     {
-        return $this->escapeRow([
+        return $this->escape([
             'name' => (string) $route->name,
             'path' => (string) $route->path,
             'action' => (string) $route->action,

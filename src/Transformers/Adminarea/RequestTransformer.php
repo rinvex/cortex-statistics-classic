@@ -17,7 +17,7 @@ class RequestTransformer extends TransformerAbstract
      */
     public function transform(Request $request): array
     {
-        return $this->escapeRow([
+        return $this->escape([
             'user' => (string) $request->user,
             'session_id' => (string) $request->session_id,
             'status_code' => (string) $request->status_code,

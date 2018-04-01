@@ -17,7 +17,7 @@ class PathTransformer extends TransformerAbstract
      */
     public function transform(Path $path): array
     {
-        return $this->escapeRow([
+        return $this->escape([
             'host' => (string) $path->host,
             'locale' => (string) $path->locale,
             'accessarea' => (string) $path->accessarea,
