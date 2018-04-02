@@ -17,11 +17,14 @@ class GeoipTransformer extends TransformerAbstract
      */
     public function transform(Geoip $geoip): array
     {
+        $country = $geoip->country_code ? country($geoip->country_code) : null;
+
         return $this->escape([
             'client_ip' => (string) $geoip->client_ip,
             'latitude' => (string) $geoip->latitude,
             'longitude' => (string) $geoip->longitude,
-            'country_code' => (string) $geoip->country_code,
+            'country_code' => (string) optional($country)->getName(),
+            'country_emoji' => (string) optional($country)->getEmoji(),
             'client_ips' => (string) $geoip->client_ips,
             'is_from_trusted_proxy' => (bool) $geoip->is_from_trusted_proxy,
             'division_code' => (string) $geoip->division_code,

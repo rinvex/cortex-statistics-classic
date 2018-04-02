@@ -56,7 +56,7 @@ class GeoipsDataTable extends AbstractDataTable
             'client_ip' => ['title' => trans('cortex/statistics::common.client_ip'), 'responsivePriority' => 0],
             'latitude' => ['title' => trans('cortex/statistics::common.latitude')],
             'longitude' => ['title' => trans('cortex/statistics::common.longitude')],
-            'country_code' => ['title' => trans('cortex/statistics::common.country_code')],
+            'country_code' => ['title' => trans('cortex/statistics::common.country_code'), 'render' => 'full.country_emoji+" "+data'],
             'client_ips' => ['title' => trans('cortex/statistics::common.client_ips'), 'visible' => false],
             'is_from_trusted_proxy' => ['title' => trans('cortex/statistics::common.is_from_trusted_proxy')],
             'division_code' => ['title' => trans('cortex/statistics::common.division_code')],
