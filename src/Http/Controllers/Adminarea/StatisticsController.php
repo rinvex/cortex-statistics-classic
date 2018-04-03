@@ -54,7 +54,6 @@ class StatisticsController extends AuthorizedController
     {
         return $agentsDataTable->with([
             'id' => 'adminarea-statistics-agents-table',
-            'phrase' => trans('cortex/statistics::common.agents'),
         ])->render('cortex/foundation::adminarea.pages.datatable');
     }
 
@@ -69,7 +68,6 @@ class StatisticsController extends AuthorizedController
     {
         return $geoipsDataTable->with([
             'id' => 'adminarea-statistics-geoips-table',
-            'phrase' => trans('cortex/statistics::common.geoips'),
         ])->render('cortex/foundation::adminarea.pages.datatable');
     }
 
@@ -84,7 +82,6 @@ class StatisticsController extends AuthorizedController
     {
         return $devicesDataTable->with([
             'id' => 'adminarea-statistics-devices-table',
-            'phrase' => trans('cortex/statistics::common.devices'),
         ])->render('cortex/foundation::adminarea.pages.datatable');
     }
 
@@ -99,7 +96,6 @@ class StatisticsController extends AuthorizedController
     {
         return $pathsDataTable->with([
             'id' => 'adminarea-statistics-paths-table',
-            'phrase' => trans('cortex/statistics::common.paths'),
         ])->render('cortex/foundation::adminarea.pages.datatable');
     }
 
@@ -114,7 +110,6 @@ class StatisticsController extends AuthorizedController
     {
         return $platformsDataTable->with([
             'id' => 'adminarea-statistics-platforms-table',
-            'phrase' => trans('cortex/statistics::common.platforms'),
         ])->render('cortex/foundation::adminarea.pages.datatable');
     }
 
@@ -129,7 +124,6 @@ class StatisticsController extends AuthorizedController
     {
         return $requestsDataTable->with([
             'id' => 'adminarea-statistics-requests-table',
-            'phrase' => trans('cortex/statistics::common.requests'),
         ])->render('cortex/foundation::adminarea.pages.datatable');
     }
 
@@ -144,7 +138,6 @@ class StatisticsController extends AuthorizedController
     {
         return $routesDataTable->with([
             'id' => 'adminarea-statistics-routes-table',
-            'phrase' => trans('cortex/statistics::common.routes'),
         ])->render('cortex/foundation::adminarea.pages.datatable');
     }
 }
