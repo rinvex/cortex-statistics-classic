@@ -46,7 +46,7 @@ class RequestsDataTable extends AbstractDataTable
             'is_json' => ['title' => trans('cortex/statistics::common.is_json'), 'visible' => false],
             'is_ajax' => ['title' => trans('cortex/statistics::common.is_ajax'), 'visible' => false],
             'is_pjax' => ['title' => trans('cortex/statistics::common.is_pjax'), 'visible' => false],
-            'created_at' => ['title' => trans('cortex/statistics::common.created_at'), 'render' => "moment(data).format('MMMM Do YYYY, hh:mm:ss A')"],
+            'created_at' => ['title' => trans('cortex/statistics::common.created_at'), 'render' => "moment(data).format('YYYY-MM-DD, hh:mm:ss A')"],
         ];
     }
 }
