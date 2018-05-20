@@ -54,7 +54,7 @@ class StatisticsController extends AuthorizedController
     {
         return $agentsDataTable->with([
             'id' => 'adminarea-statistics-agents-table',
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
@@ -68,7 +68,7 @@ class StatisticsController extends AuthorizedController
     {
         return $geoipsDataTable->with([
             'id' => 'adminarea-statistics-geoips-table',
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
@@ -82,7 +82,7 @@ class StatisticsController extends AuthorizedController
     {
         return $devicesDataTable->with([
             'id' => 'adminarea-statistics-devices-table',
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
@@ -96,7 +96,7 @@ class StatisticsController extends AuthorizedController
     {
         return $pathsDataTable->with([
             'id' => 'adminarea-statistics-paths-table',
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
@@ -110,7 +110,7 @@ class StatisticsController extends AuthorizedController
     {
         return $platformsDataTable->with([
             'id' => 'adminarea-statistics-platforms-table',
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
@@ -124,7 +124,7 @@ class StatisticsController extends AuthorizedController
     {
         return $requestsDataTable->with([
             'id' => 'adminarea-statistics-requests-table',
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
@@ -138,6 +138,6 @@ class StatisticsController extends AuthorizedController
     {
         return $routesDataTable->with([
             'id' => 'adminarea-statistics-routes-table',
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 }
