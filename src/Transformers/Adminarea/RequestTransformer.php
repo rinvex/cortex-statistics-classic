@@ -4,25 +4,21 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Transformers\Adminarea;
 
+use Rinvex\Support\Traits\Escaper;
+use Rinvex\Statistics\Models\Request;
 use League\Fractal\TransformerAbstract;
-use Rinvex\Statistics\Contracts\RequestContract;
 
 class RequestTransformer extends TransformerAbstract
 {
+    use Escaper;
+
     /**
      * @return array
      */
-    public function transform(RequestContract $request)
+    public function transform(Request $request): array
     {
-        return [
-            'id' => (int) $request->getKey(),
-            'agent' => (object) $request->agent,
-            'device' => (object) $request->device,
-            'geoip' => (object) $request->geoip,
-            'path' => (object) $request->path,
-            'platform' => (object) $request->platform,
-            'route' => (object) $request->route,
-            'user' => (object) $request->user,
+        return $this->escape([
+            'user' => (string) $request->user,
             'session_id' => (string) $request->session_id,
             'status_code' => (string) $request->status_code,
             'method' => (string) $request->method,
@@ -36,6 +32,6 @@ class RequestTransformer extends TransformerAbstract
             'is_ajax' => (bool) $request->is_ajax,
             'is_pjax' => (bool) $request->is_pjax,
             'created_at' => (string) $request->created_at,
-        ];
+        ]);
     }
 }

@@ -16,6 +16,7 @@ class Path extends BasePath
         'locale',
         'accessarea',
         'path',
+        'method',
         'parameters',
     ];
 
@@ -27,6 +28,7 @@ class Path extends BasePath
         'locale' => 'string',
         'accessarea' => 'string',
         'path' => 'string',
+        'method' => 'string',
         'parameters' => 'json',
     ];
 
@@ -38,8 +40,9 @@ class Path extends BasePath
     protected $rules = [
         'host' => 'required|string',
         'locale' => 'required|string',
-        'accessarea' => 'required|string',
+        'accessarea' => 'nullable|string',
         'path' => 'required|string',
+        'method' => 'required|string',
         'parameters' => 'nullable|array',
     ];
 }

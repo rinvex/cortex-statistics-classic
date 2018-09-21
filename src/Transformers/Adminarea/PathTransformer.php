@@ -4,24 +4,26 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Transformers\Adminarea;
 
+use Rinvex\Statistics\Models\Path;
+use Rinvex\Support\Traits\Escaper;
 use League\Fractal\TransformerAbstract;
-use Rinvex\Statistics\Contracts\PathContract;
 
 class PathTransformer extends TransformerAbstract
 {
+    use Escaper;
+
     /**
      * @return array
      */
-    public function transform(PathContract $path)
+    public function transform(Path $path): array
     {
-        return [
-            'id' => (int) $path->getKey(),
+        return $this->escape([
             'host' => (string) $path->host,
             'locale' => (string) $path->locale,
             'accessarea' => (string) $path->accessarea,
             'path' => (string) $path->path,
-            'parameters' => (string) implode(',', $path->parameters),
-            'count' => (string) $path->count,
-        ];
+            'parameters' => (string) $path->parameters,
+            'count' => (int) $path->count,
+        ]);
     }
 }

@@ -4,22 +4,24 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Transformers\Adminarea;
 
+use Rinvex\Support\Traits\Escaper;
+use Rinvex\Statistics\Models\Device;
 use League\Fractal\TransformerAbstract;
-use Rinvex\Statistics\Contracts\DeviceContract;
 
 class DeviceTransformer extends TransformerAbstract
 {
+    use Escaper;
+
     /**
      * @return array
      */
-    public function transform(DeviceContract $device)
+    public function transform(Device $device): array
     {
-        return [
-            'id' => (int) $device->getKey(),
+        return $this->escape([
             'family' => (string) $device->family,
             'model' => (string) $device->model,
             'brand' => (string) $device->brand,
             'count' => (int) $device->count,
-        ];
+        ]);
     }
 }

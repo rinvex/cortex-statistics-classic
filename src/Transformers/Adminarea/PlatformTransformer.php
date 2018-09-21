@@ -4,21 +4,23 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Transformers\Adminarea;
 
+use Rinvex\Support\Traits\Escaper;
+use Rinvex\Statistics\Models\Platform;
 use League\Fractal\TransformerAbstract;
-use Rinvex\Statistics\Contracts\PlatformContract;
 
 class PlatformTransformer extends TransformerAbstract
 {
+    use Escaper;
+
     /**
      * @return array
      */
-    public function transform(PlatformContract $platform)
+    public function transform(Platform $platform): array
     {
-        return [
-            'id' => (int) $platform->getKey(),
+        return $this->escape([
             'family' => (string) $platform->family,
             'version' => (string) $platform->version,
-            'count' => (string) $platform->count,
-        ];
+            'count' => (int) $platform->count,
+        ]);
     }
 }

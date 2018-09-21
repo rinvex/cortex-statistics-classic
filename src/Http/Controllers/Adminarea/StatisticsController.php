@@ -18,20 +18,33 @@ class StatisticsController extends AuthorizedController
     /**
      * {@inheritdoc}
      */
-    protected $resource = 'statistics';
+    protected $resource = 'list-statistics';
 
     /**
-     * Display a listing of the resource.
+     * {@inheritdoc}
+     */
+    protected $resourceMethodsWithoutModels = [
+        'agents',
+        'geoips',
+        'devices',
+        'paths',
+        'platforms',
+        'requests',
+        'routes',
+    ];
+
+    /**
+     * Show statistics index.
      *
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\View\View
+     * @return \Illuminate\View\View
      */
     public function index()
     {
-        return view('cortex/foundation::adminarea.pages.home');
+        return view('cortex/foundation::adminarea.pages.index');
     }
 
     /**
-     * Display a listing of the resource.
+     * List all agents.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\AgentsDataTable $agentsDataTable
      *
@@ -41,12 +54,11 @@ class StatisticsController extends AuthorizedController
     {
         return $agentsDataTable->with([
             'id' => 'adminarea-statistics-agents-table',
-            'phrase' => trans('cortex/statistics::common.agents'),
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
-     * Display a listing of the resource.
+     * List all geoips.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\GeoipsDataTable $geoipsDataTable
      *
@@ -56,12 +68,11 @@ class StatisticsController extends AuthorizedController
     {
         return $geoipsDataTable->with([
             'id' => 'adminarea-statistics-geoips-table',
-            'phrase' => trans('cortex/statistics::common.geoips'),
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
-     * Display a listing of the resource.
+     * List all devices.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\DevicesDataTable $devicesDataTable
      *
@@ -71,12 +82,11 @@ class StatisticsController extends AuthorizedController
     {
         return $devicesDataTable->with([
             'id' => 'adminarea-statistics-devices-table',
-            'phrase' => trans('cortex/statistics::common.devices'),
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
-     * Display a listing of the resource.
+     * List all paths.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\PathsDataTable $pathsDataTable
      *
@@ -86,12 +96,11 @@ class StatisticsController extends AuthorizedController
     {
         return $pathsDataTable->with([
             'id' => 'adminarea-statistics-paths-table',
-            'phrase' => trans('cortex/statistics::common.paths'),
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
-     * Display a listing of the resource.
+     * List all platforms.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\PlatformsDataTable $platformsDataTable
      *
@@ -101,12 +110,11 @@ class StatisticsController extends AuthorizedController
     {
         return $platformsDataTable->with([
             'id' => 'adminarea-statistics-platforms-table',
-            'phrase' => trans('cortex/statistics::common.platforms'),
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
-     * Display a listing of the resource.
+     * List all requests.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\RequestsDataTable $requestsDataTable
      *
@@ -116,12 +124,11 @@ class StatisticsController extends AuthorizedController
     {
         return $requestsDataTable->with([
             'id' => 'adminarea-statistics-requests-table',
-            'phrase' => trans('cortex/statistics::common.requests'),
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 
     /**
-     * Display a listing of the resource.
+     * List all routes.
      *
      * @param \Cortex\Statistics\DataTables\Adminarea\RoutesDataTable $routesDataTable
      *
@@ -131,7 +138,6 @@ class StatisticsController extends AuthorizedController
     {
         return $routesDataTable->with([
             'id' => 'adminarea-statistics-routes-table',
-            'phrase' => trans('cortex/statistics::common.routes'),
-        ])->render('cortex/foundation::adminarea.pages.datatable');
+        ])->render('cortex/foundation::adminarea.pages.datatable-index');
     }
 }

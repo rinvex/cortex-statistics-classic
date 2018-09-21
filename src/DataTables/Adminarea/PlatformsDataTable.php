@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\DataTables\Adminarea;
 
-use Rinvex\Statistics\Contracts\PlatformContract;
+use Rinvex\Statistics\Models\Platform;
 use Cortex\Foundation\DataTables\AbstractDataTable;
 use Cortex\Statistics\Transformers\Adminarea\PlatformTransformer;
 
@@ -13,7 +13,7 @@ class PlatformsDataTable extends AbstractDataTable
     /**
      * {@inheritdoc}
      */
-    protected $model = PlatformContract::class;
+    protected $model = Platform::class;
 
     /**
      * {@inheritdoc}
@@ -21,31 +21,16 @@ class PlatformsDataTable extends AbstractDataTable
     protected $transformer = PlatformTransformer::class;
 
     /**
-     * Get default builder parameters.
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    protected function getBuilderParameters()
-    {
-        return [
-            'keys' => true,
-            'retrieve' => true,
-            'autoWidth' => false,
-            'dom' => "<'row'<'col-sm-6'B><'col-sm-6'f>> <'row'r><'row'<'col-sm-12't>> <'row'<'col-sm-5'i><'col-sm-7'p>>",
-            'buttons' => [
-                'print', 'reset', 'reload', 'export',
-                ['extend' => 'colvis', 'text' => '<i class="fa fa-columns"></i> '.trans('cortex/foundation::common.columns').' <span class="caret"/>'],
-                ['extend' => 'pageLength', 'text' => '<i class="fa fa-list-ol"></i> '.trans('cortex/foundation::common.limit').' <span class="caret"/>'],
-            ],
-        ];
-    }
+    protected $createButton = false;
 
     /**
      * Get columns.
      *
      * @return array
      */
-    protected function getColumns()
+    protected function getColumns(): array
     {
         return [
             'family' => ['title' => trans('cortex/statistics::common.family'), 'responsivePriority' => 0],

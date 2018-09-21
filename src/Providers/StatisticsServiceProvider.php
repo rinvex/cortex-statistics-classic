@@ -7,6 +7,7 @@ namespace Cortex\Statistics\Providers;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Cortex\Statistics\Console\Commands\SeedCommand;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Cortex\Statistics\Console\Commands\InstallCommand;
 use Cortex\Statistics\Console\Commands\MigrateCommand;
 use Cortex\Statistics\Console\Commands\PublishCommand;
@@ -36,7 +37,7 @@ class StatisticsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         // Register console commands
         ! $this->app->runningInConsole() || $this->registerCommands();
@@ -47,15 +48,26 @@ class StatisticsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Router $router)
+    public function boot(Router $router): void
     {
+        // Map relations
+        Relation::morphMap([
+            'path' => config('rinvex.statistics.models.path'),
+            'agent' => config('rinvex.statistics.models.agent'),
+            'geoip' => config('rinvex.statistics.models.geoip'),
+            'route' => config('rinvex.statistics.models.route'),
+            'device' => config('rinvex.statistics.models.device'),
+            'request' => config('rinvex.statistics.models.request'),
+            'platform' => config('rinvex.statistics.models.platform'),
+        ]);
+
         // Load resources
-        require __DIR__.'/../../routes/breadcrumbs.php';
-        $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
+        require __DIR__.'/../../routes/breadcrumbs/adminarea.php';
+        $this->loadRoutesFrom(__DIR__.'/../../routes/web/adminarea.php');
         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'cortex/statistics');
         ! $this->app->runningInConsole() || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
-        $this->app->afterResolving('blade.compiler', function () {
-            require __DIR__.'/../../routes/menus.php';
+        $this->app->runningInConsole() || $this->app->afterResolving('blade.compiler', function () {
+            require __DIR__.'/../../routes/menus/adminarea.php';
         });
 
         // Publish Resources
@@ -67,7 +79,7 @@ class StatisticsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function publishResources()
+    protected function publishResources(): void
     {
         $this->publishes([realpath(__DIR__.'/../../database/migrations') => database_path('migrations')], 'cortex-statistics-migrations');
         $this->publishes([realpath(__DIR__.'/../../resources/lang') => resource_path('lang/vendor/cortex/statistics')], 'cortex-statistics-lang');
@@ -78,13 +90,11 @@ class StatisticsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerCommands()
+    protected function registerCommands(): void
     {
         // Register artisan commands
         foreach ($this->commands as $key => $value) {
-            $this->app->singleton($value, function ($app) use ($key) {
-                return new $key();
-            });
+            $this->app->singleton($value, $key);
         }
 
         $this->commands(array_values($this->commands));
