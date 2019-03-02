@@ -29,7 +29,7 @@ class Path extends BasePath
         'accessarea' => 'string',
         'path' => 'string',
         'method' => 'string',
-        'parameters' => 'json',
+        'parameters' => 'array',
     ];
 
     /**
