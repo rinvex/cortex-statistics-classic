@@ -13,6 +13,12 @@ class CortexStatisticsSeeder extends Seeder
      */
     public function run()
     {
-        Bouncer::allow('admin')->to('list-statistics');
+        $abilities = [
+            ['name' => 'list-statistics', 'title' => 'List statistics'],
+        ];
+
+        collect($abilities)->each(function (array $ability) {
+            app('cortex.auth.ability')->create($ability);
+        });
     }
 }
