@@ -43,7 +43,7 @@ class StatisticsServiceProvider extends ServiceProvider
     public function register(): void
     {
         // Register console commands
-        ! $this->app->runningInConsole() || $this->registersCommands();
+        ! $this->app->runningInConsole() || $this->registerCommands();
     }
 
     /**
