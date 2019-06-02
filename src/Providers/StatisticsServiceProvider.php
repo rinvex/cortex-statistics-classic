@@ -6,6 +6,7 @@ namespace Cortex\Statistics\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Rinvex\Support\Traits\ConsoleTools;
 use Cortex\Statistics\Console\Commands\SeedCommand;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Cortex\Statistics\Console\Commands\InstallCommand;
@@ -15,6 +16,8 @@ use Cortex\Statistics\Console\Commands\RollbackCommand;
 
 class StatisticsServiceProvider extends ServiceProvider
 {
+    use ConsoleTools;
+
     /**
      * The commands to be registered.
      *
@@ -65,38 +68,12 @@ class StatisticsServiceProvider extends ServiceProvider
         require __DIR__.'/../../routes/breadcrumbs/adminarea.php';
         $this->loadRoutesFrom(__DIR__.'/../../routes/web/adminarea.php');
         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'cortex/statistics');
-        ! $this->app->runningInConsole() || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->app->runningInConsole() || $this->app->afterResolving('blade.compiler', function () {
             require __DIR__.'/../../routes/menus/adminarea.php';
         });
 
         // Publish Resources
-        ! $this->app->runningInConsole() || $this->publishResources();
-    }
-
-    /**
-     * Publish resources.
-     *
-     * @return void
-     */
-    protected function publishResources(): void
-    {
-        $this->publishes([realpath(__DIR__.'/../../database/migrations') => database_path('migrations')], 'cortex-statistics-migrations');
-        $this->publishes([realpath(__DIR__.'/../../resources/lang') => resource_path('lang/vendor/cortex/statistics')], 'cortex-statistics-lang');
-    }
-
-    /**
-     * Register console commands.
-     *
-     * @return void
-     */
-    protected function registerCommands(): void
-    {
-        // Register artisan commands
-        foreach ($this->commands as $key => $value) {
-            $this->app->singleton($value, $key);
-        }
-
-        $this->commands(array_values($this->commands));
+        ! $this->app->runningInConsole() || $this->publishesLang('cortex/statistics');
+        ! $this->app->runningInConsole() || $this->publishesMigrations('cortex/statistics');
     }
 }
