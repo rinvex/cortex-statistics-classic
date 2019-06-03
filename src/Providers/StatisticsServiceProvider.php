@@ -73,7 +73,7 @@ class StatisticsServiceProvider extends ServiceProvider
         });
 
         // Publish Resources
-        ! $this->app->runningInConsole() || $this->publishesLang('cortex/statistics');
-        ! $this->app->runningInConsole() || $this->publishesMigrations('cortex/statistics');
+        ! $this->app->runningInConsole() || $this->publishesLang('cortex/statistics', true);
+        ! $this->app->runningInConsole() || $this->publishesMigrations('cortex/statistics', true);
     }
 }
