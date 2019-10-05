@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Providers;
 
-use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Rinvex\Support\Traits\ConsoleTools;
+use Illuminate\Contracts\Events\Dispatcher;
 use Cortex\Statistics\Console\Commands\SeedCommand;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Cortex\Statistics\Console\Commands\InstallCommand;
@@ -51,7 +51,7 @@ class StatisticsServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Router $router): void
+    public function boot(Dispatcher $dispatcher): void
     {
         // Map relations
         Relation::morphMap([
@@ -67,8 +67,8 @@ class StatisticsServiceProvider extends ServiceProvider
         // Load resources
         $this->loadRoutesFrom(__DIR__.'/../../routes/web/adminarea.php');
         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'cortex/statistics');
-        $this->app->runningInConsole() || $this->app->afterResolving('blade.compiler', function () {
-            $accessarea = $this->app['request']->route('accessarea');
+
+        $this->app->runningInConsole() || $dispatcher->listen('controller.constructed', function ($accessarea) {
             ! file_exists($menus = __DIR__."/../../routes/menus/{$accessarea}.php") || require $menus;
             ! file_exists($breadcrumbs = __DIR__."/../../routes/breadcrumbs/{$accessarea}.php") || require $breadcrumbs;
         });
