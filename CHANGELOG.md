@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## [v3.0.2] - 2019-10-14
+- Update menus & breadcrumbs event listener to accessarea.ready
+- Fix wrong dependencies letter case
+
 ## [v3.0.1] - 2019-10-06
 - Refactor menus and breadcrumb bindings to utilize event dispatcher
 
@@ -47,6 +51,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2018-09-22
 - Tag first release
 
+[v3.0.2]: https://github.com/rinvex/cortex-statistics/compare/v3.0.1...v3.0.2
 [v3.0.1]: https://github.com/rinvex/cortex-statistics/compare/v3.0.0...v3.0.1
 [v3.0.0]: https://github.com/rinvex/cortex-statistics/compare/v2.2.1...v3.0.0
 [v2.2.1]: https://github.com/rinvex/cortex-statistics/compare/v2.2.0...v2.2.1
