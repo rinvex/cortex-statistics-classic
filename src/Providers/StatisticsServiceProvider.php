@@ -42,6 +42,9 @@ class StatisticsServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        // Merge config
+        $this->mergeConfigFrom(realpath(__DIR__.'/../../config/config.php'), 'cortex.statistics');
+
         // Register console commands
         ! $this->app->runningInConsole() || $this->registerCommands();
     }
@@ -76,5 +79,6 @@ class StatisticsServiceProvider extends ServiceProvider
         // Publish Resources
         ! $this->app->runningInConsole() || $this->publishesLang('cortex/statistics', true);
         ! $this->app->runningInConsole() || $this->publishesMigrations('cortex/statistics', true);
+        ! $this->app['config']['cortex.statistics.autoload_migrations'] || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
     }
 }
