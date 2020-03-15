@@ -64,6 +64,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2018-09-22
 - Tag first release
 
+[v4.0.1]: https://github.com/rinvex/cortex-statistics/compare/v4.0.0...v4.0.1
 [v4.0.0]: https://github.com/rinvex/cortex-statistics/compare/v3.0.5...v4.0.0
 [v3.0.5]: https://github.com/rinvex/cortex-statistics/compare/v3.0.4...v3.0.5
 [v3.0.4]: https://github.com/rinvex/cortex-statistics/compare/v3.0.3...v3.0.4
