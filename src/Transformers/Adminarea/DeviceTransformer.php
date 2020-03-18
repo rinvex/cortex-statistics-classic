@@ -13,6 +13,10 @@ class DeviceTransformer extends TransformerAbstract
     use Escaper;
 
     /**
+     * Transform device model.
+     *
+     * @param \Rinvex\Statistics\Models\Device $device
+     *
      * @return array
      */
     public function transform(Device $device): array

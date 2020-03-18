@@ -13,6 +13,10 @@ class RouteTransformer extends TransformerAbstract
     use Escaper;
 
     /**
+     * Transform route model.
+     *
+     * @param \Rinvex\Statistics\Models\Route $route
+     *
      * @return array
      */
     public function transform(Route $route): array

@@ -13,6 +13,10 @@ class AgentTransformer extends TransformerAbstract
     use Escaper;
 
     /**
+     * Transform agent model.
+     *
+     * @param \Rinvex\Statistics\Models\Agent $agent
+     *
      * @return array
      */
     public function transform(Agent $agent): array

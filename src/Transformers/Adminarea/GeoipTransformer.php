@@ -13,6 +13,10 @@ class GeoipTransformer extends TransformerAbstract
     use Escaper;
 
     /**
+     * Transform geoip model.
+     *
+     * @param \Rinvex\Statistics\Models\Geoip $geoip
+     *
      * @return array
      */
     public function transform(Geoip $geoip): array
