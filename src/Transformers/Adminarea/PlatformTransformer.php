@@ -13,6 +13,10 @@ class PlatformTransformer extends TransformerAbstract
     use Escaper;
 
     /**
+     * Transform platform model.
+     *
+     * @param \Rinvex\Statistics\Models\Platform $platform
+     *
      * @return array
      */
     public function transform(Platform $platform): array

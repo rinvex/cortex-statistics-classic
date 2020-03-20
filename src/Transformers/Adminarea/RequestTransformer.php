@@ -13,6 +13,10 @@ class RequestTransformer extends TransformerAbstract
     use Escaper;
 
     /**
+     * Transform request model.
+     *
+     * @param \Rinvex\Statistics\Models\Request $request
+     *
      * @return array
      */
     public function transform(Request $request): array

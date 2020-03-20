@@ -13,6 +13,12 @@ class PathTransformer extends TransformerAbstract
     use Escaper;
 
     /**
+     * Transform path model.
+     *
+     * @param \Rinvex\Statistics\Models\Path $path
+     *
+     * @throws \Exception
+     *
      * @return array
      */
     public function transform(Path $path): array
