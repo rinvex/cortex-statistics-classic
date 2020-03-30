@@ -33,14 +33,14 @@ class PublishCommand extends BasePublishCommand
 
         switch ($this->option('resource')) {
             case 'lang':
-                $this->call('vendor:publish', ['--tag' => 'cortex-statistics-lang', '--force' => $this->option('force')]);
+                $this->call('vendor:publish', ['--tag' => 'cortex/statistics::lang', '--force' => $this->option('force')]);
                 break;
             case 'migrations':
-                $this->call('vendor:publish', ['--tag' => 'cortex-statistics-migrations', '--force' => $this->option('force')]);
+                $this->call('vendor:publish', ['--tag' => 'cortex/statistics::migrations', '--force' => $this->option('force')]);
                 break;
             default:
-                $this->call('vendor:publish', ['--tag' => 'cortex-statistics-lang', '--force' => $this->option('force')]);
-                $this->call('vendor:publish', ['--tag' => 'cortex-statistics-migrations', '--force' => $this->option('force')]);
+                $this->call('vendor:publish', ['--tag' => 'cortex/statistics::lang', '--force' => $this->option('force')]);
+                $this->call('vendor:publish', ['--tag' => 'cortex/statistics::migrations', '--force' => $this->option('force')]);
                 break;
         }
 
