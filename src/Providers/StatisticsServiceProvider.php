@@ -70,6 +70,7 @@ class StatisticsServiceProvider extends ServiceProvider
         // Load resources
         $this->loadRoutesFrom(__DIR__.'/../../routes/web/adminarea.php');
         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'cortex/statistics');
+        ! $this->autoloadMigrations('cortex/statistics') || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
 
         $this->app->runningInConsole() || $dispatcher->listen('accessarea.ready', function ($accessarea) {
             ! file_exists($menus = __DIR__."/../../routes/menus/{$accessarea}.php") || require $menus;
@@ -79,6 +80,5 @@ class StatisticsServiceProvider extends ServiceProvider
         // Publish Resources
         $this->publishesLang('cortex/statistics', true);
         $this->publishesMigrations('cortex/statistics', true);
-        ! $this->autoloadMigrations('cortex.statistics') || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
     }
 }
