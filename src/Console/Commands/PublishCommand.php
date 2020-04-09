@@ -31,7 +31,7 @@ class PublishCommand extends BasePublishCommand
     {
         parent::handle();
 
-        collect($this->option('resource'))->each(function ($resource) {
+        collect($this->option('resource') ?: ['config', 'lang', 'migrations'])->each(function ($resource) {
             $this->call('vendor:publish', ['--tag' => "cortex/statistics::{$resource}", '--force' => $this->option('force')]);
         });
 
