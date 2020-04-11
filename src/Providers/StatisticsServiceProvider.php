@@ -46,7 +46,7 @@ class StatisticsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(realpath(__DIR__.'/../../config/config.php'), 'cortex.statistics');
 
         // Register console commands
-        $this->registerCommands();
+        $this->registerCommands($this->commands);
     }
 
     /**
