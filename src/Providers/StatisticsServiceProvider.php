@@ -68,7 +68,6 @@ class StatisticsServiceProvider extends ServiceProvider
         ]);
 
         // Load resources
-        $this->loadRoutesFrom(__DIR__.'/../../routes/web/adminarea.php');
         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'cortex/statistics');
         ! $this->autoloadMigrations('cortex/statistics') || $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
 
