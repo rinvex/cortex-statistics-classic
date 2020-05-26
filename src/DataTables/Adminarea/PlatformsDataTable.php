@@ -21,9 +21,28 @@ class PlatformsDataTable extends AbstractDataTable
     protected $transformer = PlatformTransformer::class;
 
     /**
-     * {@inheritdoc}
+     * Set action buttons.
+     *
+     * @var mixed
      */
-    protected $createButton = false;
+    protected $buttons = [
+        'create' => false,
+        'import' => false,
+
+        'export' => true,
+        'print' => true,
+        'showSelected' => true,
+
+        'reset' => true,
+        'reload' => true,
+
+        'bulkDelete' => true,
+        'bulkEnable' => false,
+        'bulkDisable' => false,
+
+        'colvis' => true,
+        'pageLength' => true,
+    ];
 
     /**
      * Get columns.
