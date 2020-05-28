@@ -29,16 +29,16 @@ class AgentsDataTable extends AbstractDataTable
         'create' => false,
         'import' => false,
 
-        'export' => true,
-        'print' => true,
-        'showSelected' => true,
-
         'reset' => true,
         'reload' => true,
+        'showSelected' => true,
 
-        'bulkDelete' => true,
-        'bulkEnable' => false,
-        'bulkDisable' => false,
+        'export' => true,
+        'print' => true,
+
+        'bulkDelete' => false,
+        'bulkActivate' => false,
+        'bulkDeactivate' => false,
 
         'colvis' => true,
         'pageLength' => true,

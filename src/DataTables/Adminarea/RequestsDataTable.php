@@ -29,16 +29,16 @@ class RequestsDataTable extends AbstractDataTable
         'create' => false,
         'import' => false,
 
-        'export' => true,
-        'print' => true,
-        'showSelected' => true,
-
         'reset' => true,
         'reload' => true,
+        'showSelected' => true,
 
-        'bulkDelete' => true,
-        'bulkEnable' => false,
-        'bulkDisable' => false,
+        'print' => true,
+        'export' => true,
+
+        'bulkDelete' => false,
+        'bulkActivate' => false,
+        'bulkDeactivate' => false,
 
         'colvis' => true,
         'pageLength' => true,
