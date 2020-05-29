@@ -72,6 +72,7 @@ class GeoipsDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'client_ip' => ['title' => trans('cortex/statistics::common.client_ip'), 'responsivePriority' => 0],
             'latitude' => ['title' => trans('cortex/statistics::common.latitude')],
             'longitude' => ['title' => trans('cortex/statistics::common.longitude')],

@@ -52,6 +52,7 @@ class PathsDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'host' => ['title' => trans('cortex/statistics::common.host'), 'responsivePriority' => 0],
             'locale' => ['title' => trans('cortex/statistics::common.locale')],
             'accessarea' => ['title' => trans('cortex/statistics::common.accessarea')],

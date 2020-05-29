@@ -52,6 +52,7 @@ class PlatformsDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'family' => ['title' => trans('cortex/statistics::common.family'), 'responsivePriority' => 0],
             'version' => ['title' => trans('cortex/statistics::common.version')],
             'count' => ['title' => trans('cortex/statistics::common.count')],

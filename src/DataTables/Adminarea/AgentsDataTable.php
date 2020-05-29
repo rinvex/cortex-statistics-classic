@@ -52,6 +52,7 @@ class AgentsDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'name' => ['title' => trans('cortex/statistics::common.name'), 'responsivePriority' => 0],
             'kind' => ['title' => trans('cortex/statistics::common.kind')],
             'family' => ['title' => trans('cortex/statistics::common.family')],

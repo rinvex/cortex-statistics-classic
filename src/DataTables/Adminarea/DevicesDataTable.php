@@ -52,6 +52,7 @@ class DevicesDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'family' => ['title' => trans('cortex/statistics::common.family'), 'responsivePriority' => 0],
             'model' => ['title' => trans('cortex/statistics::common.model')],
             'brand' => ['title' => trans('cortex/statistics::common.brand')],

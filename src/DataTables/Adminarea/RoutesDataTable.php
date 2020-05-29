@@ -52,6 +52,7 @@ class RoutesDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'name' => ['title' => trans('cortex/statistics::common.name'), 'responsivePriority' => 0],
             'path' => ['title' => trans('cortex/statistics::common.path')],
             'action' => ['title' => trans('cortex/statistics::common.action')],

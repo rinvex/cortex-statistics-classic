@@ -52,6 +52,7 @@ class RequestsDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'user' => ['title' => trans('cortex/statistics::common.user'), 'responsivePriority' => 0],
             'session_id' => ['title' => trans('cortex/statistics::common.session_id')],
             'status_code' => ['title' => trans('cortex/statistics::common.status_code')],
