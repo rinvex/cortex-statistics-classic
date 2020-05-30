@@ -21,9 +21,28 @@ class PlatformsDataTable extends AbstractDataTable
     protected $transformer = PlatformTransformer::class;
 
     /**
-     * {@inheritdoc}
+     * Set action buttons.
+     *
+     * @var mixed
      */
-    protected $createButton = false;
+    protected $buttons = [
+        'create' => false,
+        'import' => false,
+
+        'reset' => true,
+        'reload' => true,
+        'showSelected' => true,
+
+        'print' => true,
+        'export' => true,
+
+        'bulkDelete' => false,
+        'bulkActivate' => false,
+        'bulkDeactivate' => false,
+
+        'colvis' => true,
+        'pageLength' => true,
+    ];
 
     /**
      * Get columns.
@@ -33,6 +52,7 @@ class PlatformsDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'family' => ['title' => trans('cortex/statistics::common.family'), 'responsivePriority' => 0],
             'version' => ['title' => trans('cortex/statistics::common.version')],
             'count' => ['title' => trans('cortex/statistics::common.count')],

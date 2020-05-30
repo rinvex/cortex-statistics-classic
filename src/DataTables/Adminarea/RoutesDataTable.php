@@ -21,9 +21,28 @@ class RoutesDataTable extends AbstractDataTable
     protected $transformer = RouteTransformer::class;
 
     /**
-     * {@inheritdoc}
+     * Set action buttons.
+     *
+     * @var mixed
      */
-    protected $createButton = false;
+    protected $buttons = [
+        'create' => false,
+        'import' => false,
+
+        'reset' => true,
+        'reload' => true,
+        'showSelected' => true,
+
+        'print' => true,
+        'export' => true,
+
+        'bulkDelete' => false,
+        'bulkActivate' => false,
+        'bulkDeactivate' => false,
+
+        'colvis' => true,
+        'pageLength' => true,
+    ];
 
     /**
      * Get columns.
@@ -33,6 +52,7 @@ class RoutesDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'name' => ['title' => trans('cortex/statistics::common.name'), 'responsivePriority' => 0],
             'path' => ['title' => trans('cortex/statistics::common.path')],
             'action' => ['title' => trans('cortex/statistics::common.action')],

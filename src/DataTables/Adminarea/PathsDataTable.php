@@ -21,9 +21,28 @@ class PathsDataTable extends AbstractDataTable
     protected $transformer = PathTransformer::class;
 
     /**
-     * {@inheritdoc}
+     * Set action buttons.
+     *
+     * @var mixed
      */
-    protected $createButton = false;
+    protected $buttons = [
+        'create' => false,
+        'import' => false,
+
+        'reset' => true,
+        'reload' => true,
+        'showSelected' => true,
+
+        'print' => true,
+        'export' => true,
+
+        'bulkDelete' => false,
+        'bulkActivate' => false,
+        'bulkDeactivate' => false,
+
+        'colvis' => true,
+        'pageLength' => true,
+    ];
 
     /**
      * Get columns.
@@ -33,6 +52,7 @@ class PathsDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'host' => ['title' => trans('cortex/statistics::common.host'), 'responsivePriority' => 0],
             'locale' => ['title' => trans('cortex/statistics::common.locale')],
             'accessarea' => ['title' => trans('cortex/statistics::common.accessarea')],

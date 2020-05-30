@@ -21,9 +21,28 @@ class AgentsDataTable extends AbstractDataTable
     protected $transformer = AgentTransformer::class;
 
     /**
-     * {@inheritdoc}
+     * Set action buttons.
+     *
+     * @var mixed
      */
-    protected $createButton = false;
+    protected $buttons = [
+        'create' => false,
+        'import' => false,
+
+        'reset' => true,
+        'reload' => true,
+        'showSelected' => true,
+
+        'export' => true,
+        'print' => true,
+
+        'bulkDelete' => false,
+        'bulkActivate' => false,
+        'bulkDeactivate' => false,
+
+        'colvis' => true,
+        'pageLength' => true,
+    ];
 
     /**
      * Get columns.
@@ -33,6 +52,7 @@ class AgentsDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'name' => ['title' => trans('cortex/statistics::common.name'), 'responsivePriority' => 0],
             'kind' => ['title' => trans('cortex/statistics::common.kind')],
             'family' => ['title' => trans('cortex/statistics::common.family')],

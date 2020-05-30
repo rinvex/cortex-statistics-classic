@@ -21,9 +21,28 @@ class RequestsDataTable extends AbstractDataTable
     protected $transformer = RequestTransformer::class;
 
     /**
-     * {@inheritdoc}
+     * Set action buttons.
+     *
+     * @var mixed
      */
-    protected $createButton = false;
+    protected $buttons = [
+        'create' => false,
+        'import' => false,
+
+        'reset' => true,
+        'reload' => true,
+        'showSelected' => true,
+
+        'print' => true,
+        'export' => true,
+
+        'bulkDelete' => false,
+        'bulkActivate' => false,
+        'bulkDeactivate' => false,
+
+        'colvis' => true,
+        'pageLength' => true,
+    ];
 
     /**
      * Get columns.
@@ -33,6 +52,7 @@ class RequestsDataTable extends AbstractDataTable
     protected function getColumns(): array
     {
         return [
+            'id' => ['checkboxes' => '{"selectRow": true}', 'exportable' => false, 'printable' => false],
             'user' => ['title' => trans('cortex/statistics::common.user'), 'responsivePriority' => 0],
             'session_id' => ['title' => trans('cortex/statistics::common.session_id')],
             'status_code' => ['title' => trans('cortex/statistics::common.status_code')],
