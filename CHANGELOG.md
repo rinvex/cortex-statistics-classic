@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 
 
+## [v4.0.8] - 2020-05-30
+- Add datatables checkbox column for bulk actions
+- Reorder datatable buttons
+- Refactor datatables default options and serverside buttons and support selected rows
+- Rename datatables container names
+- Load module routes automatically
+- Remove default indent size config
+
 ## [v4.0.7] - 2020-04-12
 - Fix ServiceProvider registerCommands method compatibility
 
@@ -94,6 +102,7 @@ This project adheres to [Semantic Versioning](CONTRIBUTING.md).
 ## v0.0.1 - 2018-09-22
 - Tag first release
 
+[v4.0.8]: https://github.com/rinvex/cortex-statistics/compare/v4.0.7...v4.0.8
 [v4.0.7]: https://github.com/rinvex/cortex-statistics/compare/v4.0.6...v4.0.7
 [v4.0.6]: https://github.com/rinvex/cortex-statistics/compare/v4.0.5...v4.0.6
 [v4.0.5]: https://github.com/rinvex/cortex-statistics/compare/v4.0.4...v4.0.5
