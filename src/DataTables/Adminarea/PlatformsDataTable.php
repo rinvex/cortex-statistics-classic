@@ -28,6 +28,7 @@ class PlatformsDataTable extends AbstractDataTable
     protected $buttons = [
         'create' => false,
         'import' => false,
+        'create_popup' => false,
 
         'reset' => true,
         'reload' => true,
