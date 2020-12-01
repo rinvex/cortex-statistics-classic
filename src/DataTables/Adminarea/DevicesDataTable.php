@@ -40,6 +40,7 @@ class DevicesDataTable extends AbstractDataTable
         'bulkDelete' => false,
         'bulkActivate' => false,
         'bulkDeactivate' => false,
+        'bulkRevoke' => false,
 
         'colvis' => true,
         'pageLength' => true,
