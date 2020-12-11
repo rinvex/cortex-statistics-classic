@@ -9,7 +9,7 @@ Route::domain(domain())->group(function () {
          ->prefix(config('cortex.foundation.route.locale_prefix') ? '{locale}/'.config('cortex.foundation.route.prefix.adminarea') : config('cortex.foundation.route.prefix.adminarea'))->group(function () {
 
         // Statistics Routes
-             Route::name('statistics.')->prefix('statistics')->group(function () {
+             Route::name('cortex.statistics.statistics.')->prefix('statistics')->group(function () {
                  Route::get('/')->name('index')->uses('StatisticsController@index');
                  Route::get('paths')->name('paths')->uses('StatisticsController@paths');
                  Route::get('agents')->name('agents')->uses('StatisticsController@agents');

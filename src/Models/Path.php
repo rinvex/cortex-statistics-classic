@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace Cortex\Statistics\Models;
 
+use Rinvex\Support\Traits\HasTimezones;
 use Rinvex\Statistics\Models\Path as BasePath;
 
 class Path extends BasePath
 {
+    use HasTimezones;
+
     /**
      * Create a new Eloquent model instance.
      *
