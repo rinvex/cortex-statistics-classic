@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Cortex\Statistics\Console\Commands;
 
 use Illuminate\Console\Command;
+use Cortex\Statistics\Database\Seeders\CortexStatisticsSeeder;
 
 class SeedCommand extends Command
 {
@@ -31,7 +32,7 @@ class SeedCommand extends Command
     {
         $this->alert($this->description);
 
-        $this->call('db:seed', ['--class' => 'CortexStatisticsSeeder']);
+        $this->call('db:seed', ['--class' => CortexStatisticsSeeder::class]);
 
         $this->line('');
     }
