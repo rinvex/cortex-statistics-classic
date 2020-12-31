@@ -9,10 +9,14 @@ use Rinvex\Support\Traits\ConsoleTools;
 use Illuminate\Contracts\Events\Dispatcher;
 use Cortex\Statistics\Console\Commands\SeedCommand;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Cortex\Statistics\Console\Commands\UnloadCommand;
 use Cortex\Statistics\Console\Commands\InstallCommand;
 use Cortex\Statistics\Console\Commands\MigrateCommand;
 use Cortex\Statistics\Console\Commands\PublishCommand;
 use Cortex\Statistics\Console\Commands\RollbackCommand;
+use Cortex\Statistics\Console\Commands\ActivateCommand;
+use Cortex\Statistics\Console\Commands\AutoloadCommand;
+use Cortex\Statistics\Console\Commands\DeactivateCommand;
 
 class StatisticsServiceProvider extends ServiceProvider
 {
@@ -24,6 +28,11 @@ class StatisticsServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commands = [
+        ActivateCommand::class => 'command.cortex.statistics.activate',
+        DeactivateCommand::class => 'command.cortex.statistics.deactivate',
+        AutoloadCommand::class => 'command.cortex.statistics.autoload',
+        UnloadCommand::class => 'command.cortex.statistics.unload',
+
         SeedCommand::class => 'command.cortex.statistics.seed',
         InstallCommand::class => 'command.cortex.statistics.install',
         MigrateCommand::class => 'command.cortex.statistics.migrate',
