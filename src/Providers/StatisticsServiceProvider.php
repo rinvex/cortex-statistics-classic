@@ -13,9 +13,9 @@ use Cortex\Statistics\Console\Commands\UnloadCommand;
 use Cortex\Statistics\Console\Commands\InstallCommand;
 use Cortex\Statistics\Console\Commands\MigrateCommand;
 use Cortex\Statistics\Console\Commands\PublishCommand;
-use Cortex\Statistics\Console\Commands\RollbackCommand;
 use Cortex\Statistics\Console\Commands\ActivateCommand;
 use Cortex\Statistics\Console\Commands\AutoloadCommand;
+use Cortex\Statistics\Console\Commands\RollbackCommand;
 use Cortex\Statistics\Console\Commands\DeactivateCommand;
 
 class StatisticsServiceProvider extends ServiceProvider
