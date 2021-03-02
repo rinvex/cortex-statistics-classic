@@ -7,44 +7,11 @@ namespace Cortex\Statistics\Providers;
 use Illuminate\Support\ServiceProvider;
 use Rinvex\Support\Traits\ConsoleTools;
 use Illuminate\Contracts\Events\Dispatcher;
-use Cortex\Statistics\Console\Commands\SeedCommand;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Cortex\Statistics\Console\Commands\InstallCommand;
-use Cortex\Statistics\Console\Commands\MigrateCommand;
-use Cortex\Statistics\Console\Commands\PublishCommand;
-use Cortex\Statistics\Console\Commands\RollbackCommand;
 
 class StatisticsServiceProvider extends ServiceProvider
 {
     use ConsoleTools;
-
-    /**
-     * The commands to be registered.
-     *
-     * @var array
-     */
-    protected $commands = [
-        SeedCommand::class => 'command.cortex.statistics.seed',
-        InstallCommand::class => 'command.cortex.statistics.install',
-        MigrateCommand::class => 'command.cortex.statistics.migrate',
-        PublishCommand::class => 'command.cortex.statistics.publish',
-        RollbackCommand::class => 'command.cortex.statistics.rollback',
-    ];
-
-    /**
-     * Register any application services.
-     *
-     * This service provider is a great spot to register your various container
-     * bindings with the application. As you can see, we are registering our
-     * "Registrar" implementation here. You can add your own bindings too!
-     *
-     * @return void
-     */
-    public function register(): void
-    {
-        // Register console commands
-        $this->registerCommands($this->commands);
-    }
 
     /**
      * Bootstrap any application services.
