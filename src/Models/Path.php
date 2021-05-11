@@ -18,12 +18,12 @@ class Path extends BasePath
      */
     public function __construct(array $attributes = [])
     {
-        parent::__construct($attributes);
-
         $this->mergeFillable(['accessarea']);
 
         $this->mergeCasts(['accessarea' => 'string']);
 
         $this->mergeRules(['accessarea' => 'nullable|string']);
+
+        parent::__construct($attributes);
     }
 }
