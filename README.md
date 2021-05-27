@@ -1,5 +1,8 @@
 # Cortex Statistics
 
+This package is NOT actively maintained! Want to jump in as a maintainer? Ping me [@omranic](https://twitter.com/omranic)
+
+
 **Cortex Statistics** is a frontend layer for the polymorphic contact management system. You can add statistics to any eloquent model with ease.
 
 [![Packagist](https://img.shields.io/packagist/v/cortex/statistics.svg?label=Packagist&style=flat-square)](https://packagist.org/packages/cortex/statistics)
